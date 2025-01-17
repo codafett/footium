@@ -1,5 +1,21 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## System Requirements
+This project uses Node v20.0.0 (via the `.nvmrc`)
+
+To install the correct version first make sure you have `nvm` installed:
+[NVM Install Instructions](https://github.com/nvm-sh/nvm)
+
+Next install version 20.0.0 using the command:
+```bash
+nvm install 20.0.0
+```
+
+And finally make sure the app is running with v20.0.0 using the command:
+```bash
+nvm use
+```
+
 ## Getting Started
 
 First, install dependencies:
