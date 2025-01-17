@@ -6,31 +6,24 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Running the app will tell you the port running on.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:{port}](http://localhost:{port}) with your browser to see the app.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Notes
+I probably spent more than 2 hours on this, partly because I haven't used Next.js before (and had to figure out the intricacies of SSR vs CSR) and partly because I was having fun with the data, and I've not had that in a while!
 
-## Learn More
+It's not the prettiest and I definitely could have tidied that up more, but as the requirements stated it was more important to sort the functions out.
 
-To learn more about Next.js, take a look at the following resources:
+I also added the use of Jotai for state management, just because I find it really easy to use and removed a lot of prop drilling that would have otherwise been necessary.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+I also didn't put and memoization around calculating the players to display (based on filters) because I ran out of time. Normally I would have transferred the loading of the data and the calculation of the display players to the jotai state to ensure they are only recalculated when state changes (which in this small app they pretty much are anyway)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Assumptions
+The requirements document didn't specify if the filters and sort order should be executed by re-calling the graph server or performed locally.
 
-## Deploy on Vercel
+I decided that as the data set was small enough I would implement it on the front-end rather than making subsequent calls to the server.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
